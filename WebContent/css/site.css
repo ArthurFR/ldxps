@@ -1,0 +1,102 @@
+body {
+    background-color:#e7e7e7 ;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    margin-top:0px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    /*float:left;*/
+    max-width:1170px;
+    padding-left: 0px;
+    margin-top: 0px;
+    margin-left:auto;
+    margin-right:auto;
+
+    /*background-color:#006290;*/
+}
+section{
+    /*float:left;*/
+    /*padding:30px;*/
+
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+header{
+    max-width:1170px;
+    padding:0px;
+    margin-right:auto;
+    margin-left:auto;
+    margin-top:0px;
+
+}
+.menu{
+    background-color:#0095da;
+    list-style-type: none;
+	margin: 0;
+    padding: 0;
+	overflow:hidden;
+    border-radius: 25px 25px 0px 0px;
+}
+.menu li{
+    float:left;
+    display:block;
+	color:#ffffff;
+	font-size:18px;
+	text-align:center;
+	padding:10px 15px;
+}
+.menu li a{
+	display:block;
+	color:#ffffff;
+	font-size:18px;
+	text-decoration:none;
+	text-align:center;
+	padding:10px 15px;
+}
+.menu li:hover{
+	background-color:#333;
+}
+
+.active{
+    background-color:#006290;
+}
+*
+.addClient{
+    float:left;
+    display:block;
+    max-width:1170px;
+    min-height:110px;
+    
+    /*margin-left:auto;*/
+    /*margin-right:auto;*/
+    background-color:#f8f7f7;
+    /*padding-left:50px;*/
+    border-radius: 25px 25px 0px 0px;
+}
+.addClient ul{
+    list-style-type: none;
+}
+.addClient ul li:hover{
+    background-color:#333;
+    color:#ffffff;
+}
+
+.addClient-item{
+    /*float:left;*/
+    padding-left:10px;
+    padding-bottom:0px;
+    padding-top:0px;
+    margin-top:0px;
+    margin-bottom:0px;
+    margin-left:20px;
+    width:100%;
+    
+}
