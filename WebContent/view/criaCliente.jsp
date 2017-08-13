@@ -14,8 +14,8 @@
     <!--<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
     <link href="../css/site.css" rel="stylesheet" type="text/css" />
     <script src="script/script.js"></script>
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
     
 </head>
 <body>
@@ -23,7 +23,7 @@
     <header>
         
         <nav>
-            <a href="#home"><img src="" /></a>
+            <a href="#home"><img src="../imagem/logo.png" /></a>
             <ul class="menu">
                 <li><a href="../Index.jsp">Home</a></li>
                 <li><a href="criaVendedor.jsp">Criar Vendedor</a></li>
@@ -35,7 +35,7 @@
     <section class="container">
     	<%if(request.getParameter("editar") == null) {%>
 	        <h1>Cadastrar cliente</h1>
-	        <form action="../ClientesControle" method="POST">
+	        <form  class="form" action="../ClientesControle" method="POST">
 	        	<p>Nome: <input class="form-control" type="text" name="nome"> </p>
 	        	<p>
 	        		Cód. tab:
@@ -62,7 +62,7 @@
 		<%}else{%>
 			<h1>Editar cliente</h1>
 			<% Clientes c = DBclientes.pegarCliente(request.getParameter("editar"));%>
-	        <form action="../ClientesControle" method="POST">
+	        <form class="form" action="../ClientesControle" method="POST">
 	        	<input class="form-control" type="hidden" name="update" value="<%=c.cdcl%>">
 	        	<p>Nome: <input class="form-control" type="text" name="nome" value="<%=c.dsnome%>"> </p>
 	        	<p>
@@ -103,7 +103,10 @@
 		<%}%>
 	   
     </section>
-
+	<footer class="container">
+		<hr>
+    	Arthur Fernandes Ribeiro - 2017
+    </footer>
     
     <!--<script src="~/Scripts/bootstrap.min.js"></script>-->
 </body>

@@ -14,8 +14,8 @@
     <!--<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
     <link href="../css/site.css" rel="stylesheet" type="text/css" />
     <script src="../js/script.js"></script>
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
     
 </head>
 <body>
@@ -23,7 +23,7 @@
     <header>
         
         <nav>
-            <a href="#home"><img src="" /></a>
+            <a href="#home"><img src="../imagem/logo.png" /></a>
             <ul class="menu">
                 <li><a href="../Index.jsp">Home</a></li>
                 <li class="active"><a href="criaVendedor.jsp">Criar Vendedor</a></li>
@@ -32,14 +32,14 @@
         </nav>
     </header>
 
-    <section>
+    <section class="container">
     	<%if(request.getParameter("editar") == null) {%>
 	    	<h1>Cadastrar Vendedor</h1>
-	        <form action="../VendedoresControle" method="POST">
-	        	<p>Nome: <input type="text" name="dsnome"> </p>
-	        	<p>Cód. tab:<input type="text" name="cdtab"> </p>
-	        	<p>Data Nascimento: <input type="text" name="dtnasc"></p>
-	        	<button type="submit">Enviar</button>
+	        <form class="form" action="../VendedoresControle" method="POST">
+	        	<p>Nome: <input class="form-control" type="text" name="dsnome"> </p>
+	        	<p>Cód. tab:<input class="form-control" type="text" name="cdtab"> </p>
+	        	<p>Data Nascimento: <input class="form-control" type="text" name="dtnasc"></p>
+	        	<button class="btn btn-default" type="submit">Enviar</button>
 	        </form>
 	        
 	        
@@ -47,17 +47,17 @@
 	    	<h1>Editar Vendedor</h1>
 	    	
 	    	<% Vendedores v = DBvendedores.pegarVendedor(request.getParameter("editar"));%>
-	        <form action="../VendedoresControle" method="POST">
+	        <form class="form" action="../VendedoresControle" method="POST">
 	        	<input type="hidden" name="update" value="<%=v.getCdvend() %>">
-	        	<p>Nome: <input type="text" name="dsnome" value="<%=v.getDsnome() %>"> </p>
-	        	<p>Cód. tab:<input type="text" name="cdtab" value="<%=v.getCdtab() %>"> </p>
-	        	<p>Data Nascimento: <input type="text" name="dtnasc" value="<%=v.getDtnasc() %>"></p>
+	        	<p>Nome: <input class="form-control" class="form-control" type="text" name="dsnome" value="<%=v.getDsnome() %>"> </p>
+	        	<p>Cód. tab:<input class="form-control" type="text" name="cdtab" value="<%=v.getCdtab() %>"> </p>
+	        	<p>Data Nascimento: <input class="form-control" type="text" name="dtnasc" value="<%=v.getDtnasc() %>"></p>
 	        	<p>Clientes:</p>
 	        	<%ArrayList<Clientes> clientes = DBclientes.pegarClientes(); %>
 	        	<div>
 	        		<%for(Clientes c : clientes){ %>
-	        			<div id="left-<%=c.getCdcl()%>">
-	        				<a href="#" onclick="addCliente('<%=c.getCdcl()%>')"> + <%=c.getDsnome() %></a>
+	        			<div class="list-group" id="left-<%=c.getCdcl()%>">
+	        				<a class="list-group-item" href="#" onclick="addCliente('<%=c.getCdcl()%>')"> + <%=c.getDsnome() %></a>
 	        			</div>
 	        		<%}%>
 	        	</div>
@@ -69,14 +69,18 @@
 	        			</div>
 	        		<%}%>
 	        	</div>
-	        	<button type="submit">Enviar</button>
+	        	<button class="btn btn-default" type="submit">Enviar</button>
 	        </form>
 	        <form action="../VendedoresControle" method="POST">
 	        	<input type="hidden" name="excluir" value="<%=v.getCdvend()%>" > 
-	        	<button type="submit">Excluir</button>
+	        	<button class="btn btn-default" type="submit">Excluir</button>
 	        </form>
 	    <%} %>
     </section>
+    <footer class="container">
+    	<hr>
+    	Arthur Fernandes Ribeiro - 2017
+    </footer>
 
     
     <!--<script src="~/Scripts/bootstrap.min.js"></script>-->

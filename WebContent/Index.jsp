@@ -23,7 +23,7 @@
     <header>
         
         <nav>
-            <a href="#home"><img src="" /></a>
+            <a href="#home"><img src="imagem/logo.png" /></a>
             <ul class="menu">
                 <li class="active"><a href="Index.jsp">Home</a></li>
                 <li><a href="view/criaVendedor.jsp">Criar Vendedor</a></li>
@@ -32,17 +32,15 @@
         </nav>
     </header>
 
-    <section>
-        <div>
+    <section class="container">
+        <div class="list-group">
         	<h1>Vendedores</h1>
 	        <%ArrayList<Vendedores> vendedores = DBvendedores.pegarVendedores(); %>
 	       	<%for(Vendedores v : vendedores){ %>
-	        	<div>
-	        		<p>
-	        			<a href="Index.jsp?vendedor=<%=v.getCdvend()%>" ><%=v.getDsnome() %></a>
-	        			<a href="view/criaVendedor.jsp?editar=<%=v.getCdvend()%>">Editar</a>
+	        		<p >
+	        			<a class="list-group-item" href="Index.jsp?vendedor=<%=v.getCdvend()%>" ><%=v.getDsnome() %></a>
+	        			<a  href="view/criaVendedor.jsp?editar=<%=v.getCdvend()%>">Editar</a>
 	        		</p>
-	        	</div>
 	       	<%}%>
        	</div>
        	
@@ -51,10 +49,9 @@
        			<h1>Clientes</h1>
 		        <%ArrayList<Clientes> clientes = DBclientes.pegarClientes(request.getParameter("vendedor")); %>
 		       	<%for(Clientes c : clientes){ %>
-		        	<div>
+		        	<div class="list-group">
 		        		<p>
-		        			<%=c.getDsnome() %>
-		        			<a href="view/criaCliente.jsp?editar=<%=c.getCdcl()%>">Editar</a>
+		        			<a  class="list-group-item" href="view/criaCliente.jsp?editar=<%=c.getCdcl()%>"><%=c.getDsnome() %></a>
 		        		</p>
 		        	</div>
 		       	<%}%>
@@ -62,7 +59,10 @@
         <%} %>
         
     </section>
-
+	<footer class="container">
+		<hr>
+    	Arthur Fernandes Ribeiro - 2017
+    </footer>
     
     <!--<script src="~/Scripts/bootstrap.min.js"></script>-->
 </body>
